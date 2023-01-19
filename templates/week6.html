@@ -1,13 +1,165 @@
 {% extends 'taskAssistant.html' %}
 
+{% block button %}
+
+<button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;"
+        href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing"
+        target="_blank">View Resources</a></button>
+
+{% endblock button %}
+
 {% block heading %}
-
-week6 heading
-
+Week 6
 {% endblock heading %}
 
 {% block content %}
+<div>
+    <div>
+        We can store data and assign fixed memory to it using an array. It facilitates our work
+        more easily and effectively with data. It makes it much simpler for us to work with several
+        values. For instance, the array's values can be retrieved, allowing us to operate on all of
+        them at once. Simultaneously, but this is not the case with variables; instead, we must
+        operate with variables. Individually on them based on our requirements.
+    </div>
+    <div>
+        As we know, length is just the number of elements in an array and valid indexes are the
+        used to specify the position of elements in an array. We specify arrays like array[ i ] where
+        i are the number of elements in an array which is the length of the array and the maximum
+        possible index is i - 1.
+        <br>
+        Example:
+    </div>
+</div>
 
-week6
+<pre><code class="language-cpp">
+    #include "splashkit.h"
+    # Declaration:
+    
+    string array[4]
+
+    # So, Length of the array = 4
+    # Index of the array = 4-1 = 0…3 i.e 0,1,2, & 3 are the positions of the elements in an array.
+    # Hence, we store elements in the array like,
+    
+    array [0] = Meenu
+    array [1] = Om
+    array [2] = Mahi
+    array [3] = KartikLovleen
+</code></pre>
+</div>
+
+<hr>
+
+<div class="container mx-2">
+    <h4>
+        <br>
+        Sort Algorithms
+    </h4>
+    <div class="container mx-2 my-2">
+        I have researched about three different
+        sorting methods provided as following:
+        <h4>
+            <br>
+            • Selection Sort:
+        </h4>
+         It finds the minimum element in the unsorted array and
+        swaps it with the element at the beginning which means during iteration
+        it'll select the smallest item from the unsorted partition and move it to
+        the sorted partition.
+        <br>
+        For Example, we have an unsorted array,
+        <br>
+        2 8 5 3 9 4 1
+        <br>
+        Here, 2 is our current minimum for the start. So, we will transverse in the
+        unsorted array to find if there exists a number less than our current
+        minimum we swap it. As in the abovementioned, we can see that 1 is
+        smaller than 2 therefore it will swap their places.
+        <br>
+        By the above step, we have 1 element sorted in the LHS.
+        <br>
+        1 8 5 3 9 4 2
+    </div>
+    <div class="container mx-2 my-2">
+        Now, 8 will be our current minimum, and transversing will be performed
+        as same mentioned above and scan the remaining array for a smaller
+        number while updating the current minimum as we progress to the end
+        we found 2 and swap it with 8 and the rest will be sorted in the same way.
+        performance but it is more efficient than selection and bubble sort.
+    </div>
+    <div class="container mx-2 my-2">
+        <h4>
+            • Insertion Sort:
+        </h4>
+        It is not the best sorting algorithm in terms of
+        sorts the LHS first by transferring an element at one time to construct a
+        sorted array.
+        <br>
+        For Example, we have an unsorted array,
+        <br>
+        4 2 1 3
+        <br>
+        Step 1: We start from the second element which is 2 and check from
+        starting whether or not it is smaller than it i.e first element which is 4.
+        <br>
+        Since 2 is smaller than 4, we will insert 2 at 4's position.
+        <br>
+        2 4 1 3
+        <br>
+        Step 2: Similarly, now we check the third element which is 1 from
+        starting, and since 1 is smaller than we will insert 1 at 2's position and the
+        rest will shift.
+        <br>
+        1 2 4 3
+        <br>
+        Step 3: Finally, we now pick the fourth element which is 3and check it
+        from starting. But now 3 is greater than 1 so we will proceed to 2 and it is
+        greater than 2 too so we proceed, at last 3 is less than 4 so we will insert
+        3 at 4’s position. Thus, our array is sorted in ascending order.
+        <br>
+        1 2 3 4
+    </div>
+    <div class="container mx-2 my-2">
+        <h4>• Quick Sort: </h4>It is a Divide and Conquer as well as a most efficient
+        recursive sorting algorithm. The given array is initially divided up
+        around the element that is initially chosen as the pivot element. This
+        algorithm follows the following steps.
+        <br>
+        A pivot is just one of many items in an array it meets following conditions:
+        <br>
+        1. Pivot is at the correct position in the final sorted array.
+        <br>
+        2. All items to the left of the pivot are smaller.
+        <br>
+        3. All items to the right of the pivot are larger.
+        <br>
+        Step 1: Deciding the pivot point.
+        <br>
+        Step 2: Rearranging the items in the array until the pivot element is in a
+        position where elements greater than the pivot remain on its right side
+        and elements less than the pivot are kept on its left.
+        <br>
+        Step 3: Both the left and right subarrays are divided using the same
+        technique. Up until there is just one element left in each subarray, this
+        process is repeated.
+        <br>
+        Step 4: At this point, the items have already been sorted. A sorted array
+        is then created by concatenating the elements.
+        I have selected Quick Sort as it has an average time complexity of
+        O(n log n) i.e. the amount of time taken by an algorithm to run, as
+        a function of the length of the input and algorithm of complexity O(log(n)) is better so I
+        have selected it to use within my program.
+    </div>
+    <div>
+        <br>
+        <h5>
+            Screencast Link:
+        </h5>
+        <br> <a rel="stylesheet" href="https://splashkit.io/articles/installation/mac/" target="_blank">
+            https://youtu.be/cV8hx7GVJf8
+        </a>
+
+    </div>
+</div>
 
 {% endblock content %}

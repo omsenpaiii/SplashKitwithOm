@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-{% extends 'taskAssistant.html' %}
+    {% extends 'taskAssistant.html' %}
 
-{% block button %}
+    {% block button %}
 
-<button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;" href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing" target="_blank">View Resources</a></button>
+    <button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;"
+            href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing"
+            target="_blank">View Resources</a></button>
 
-{% endblock button %}
+    {% endblock button %}
 
-{% block heading %}
+    {% block heading %}
+    Week 1
+    {% endblock heading %}
 
-week1 heading
+    {% block content %}
+    <p>You can start by running your first program by writing this given code:</p>
+    <pre><code class="language-cpp">
+                #include "splashkit.h"
+                
+                int main()
+                {
+                    write_line("Hello World");
+                    return 0;
+                }</code></pre>
+    <div>
+        Let me explain you some key things you need to know. In order to start your journey:
+    </div>
+    <div class="container mx-3 my-2">
+        1. Skm- Means SplashKItManager, it helps us to link splash kit features to the compiler.
+        <br>
+        2. Clang++ program.cpp- Converts program source code to machine code using a
+        compiler.
+        <br>
+        3. -o sets the name of the output.
+        <br>
+        4. HelloWorld is the name of the output.
+        <br>
+        5. cd - is used to change directories(folders).
+        <br>
+        <img style="width:750px;height:230px;"
+            src="https://linuxhint.com/wp-content/uploads/2020/11/hello_world_cplusplus-02.png"
+            alt="Please wait image is loading." />
+    </div>
+    {% endblock content %}
 
-{% endblock heading %}
-
-{% block content %}
-
-week1
-<div>
-    <img style="width:500px;height:350px;" src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg" alt="bdfvfvfv" />
-</div>
-
-{% endblock content %}
-    
 </body>
+
 </html>

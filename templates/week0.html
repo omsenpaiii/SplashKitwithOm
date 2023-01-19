@@ -1,31 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
-{% extends 'taskAssistant.html' %}
+    {% extends 'taskAssistant.html' %}
 
-{% block button %}
+    {% block button %}
+    <!-- Opening resoureces in new blank page -->
+    <button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;"
+            href="https://docs.google.com/document/d/1T60a1cBReqjqW4G3IFGs2YV00oNt0nI2jGUCDBqksmg/edit"
+            target="_blank">View Resources</a></button>
+    {% endblock button %}
 
-<button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;" href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing" target="_blank">View Resources</a></button>
+    {% block heading %}
+    Welcome to Splashkit!
+    {% endblock heading %}
 
-{% endblock button %}
+    {% block content %}
+    <div>
+        <div>
+            Unleashing the Power of SplashKit: A Beginner's Guide to how to use SplashKit with C++
+        </div>
+        <hr>
+        <div>
+            Splashkit is one of the c++ language libraries developed by an Australian professor named 'Andrew Cain.'
+            It is an open-source Software Development Kit (SDK) that is both fascinating and simple to grasp for c++
+            beginners.
+        </div>
+        <div>
+            <main>
+                <h4>Setting up Splashkit on Windows PC</h4>
+                <p>
+                    • To get started from basic, you need to install MSYS2 terminal on your computer. You will find
+                    instructions to download it here MSYS2.
+                    <br>
 
-{% block heading %}
+                    • After installing MSYS2 terminal successfully you will have to install Splashkit Library on your
+                    computer. Start it with installing git client.
+                    <br>
+                    pacman -S git --noconfirm --disable-download-timeout copy paste this command in your terminal and
+                    run it.
+                    <br>
+                    • Then copying and pasting this command
+                    <br>
+                    bash <(curl -s raw.githubusercontent.com/splashkit/skm/mas..) <br> on the terminal to complete the
+                        installation of Splashkit library.
+                        <br>
+                        • Now to install gcc on windows you may run this command on terminal
+                        <br> pacman --disable-download-timeout -S mingw-w64-{x86_64,i686}-gcc
+                        mingw-w64-{i686,x86_64}-gdb
+                        <br>
+                        • Now you are all set to start, and just need an editor , you may use any that you want.
+                        <br>
+                        • For macOS, please refer to the following guide:
+                        <br> <a rel="stylesheet" href="https://splashkit.io/articles/installation/mac/" target="_blank">
+                            By clicking here!
+                        </a>
+                </p>
+                <div>
+                    <h4>
+                        Your Ontrack will soon look like this.
+                    </h4>
+                    <img style="width:800px;height:420px;"
+                        src="/static/ontrack.jpg"
+                        alt="Loading Image. Please Wait" />
+                </div>
+        </div>
+        </main>
+        The assessment in this unit focuses on the final work submitted to see how well the student has achieved the
+        learning outcomes. There are no marks for tasks during the unit. Formative feedback is provided for tasks
+        submitted weekly and work is reviewed for demonstration of required outcomes. Final portfolio submission
+        determines the grade. The process is tracked in OnTrack, where tasks are completed, feedback is received,
+        and work is signed off as complete. The goal is to achieve the set target grade through weekly feedback and
+        task completion.
+    </div>
+    </div>
+    {% endblock content %}
 
-week0 heading
-
-{% endblock heading %}
-
-{% block content %}
-
-week0
-
-{% endblock content %}
-    
 </body>
+
 </html>

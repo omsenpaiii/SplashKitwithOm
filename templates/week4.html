@@ -1,13 +1,123 @@
 {% extends 'taskAssistant.html' %}
 
+{% block button %}
+
+<button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;"
+        href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing"
+        target="_blank">View Resources</a></button>
+
+{% endblock button %}
+
 {% block heading %}
-
-week4 heading
-
+Week 4
 {% endblock heading %}
 
 {% block content %}
+<div>
+    <h4>
+        <br>
+        Tutorial: Drawing a Simple Shape Drawing with SplashKit
+    </h4>
+    In this tutorial, you'll learn how to use SplashKit to build a simple game. By the end of this tutorial, you'll be
+    able
+    to:
 
-week4
+    <h4>
+        <br>
+        Let's Set up a SplashKit project
+    </h4>
+    Draw shapes and images to the screen
+    <br>
+    Respond to user input
+    To complete this tutorial, you'll need to have SplashKit installed on your computer. If you don't have SplashKit
+    installed yet, you can follow the instructions as described above to install it.
+</div>
+
+<h4>
+    <br>
+    Step 1: Create a new SplashKit project
+</h4>
+<pre><code class="language-cpp"></code>
+First, open your code editor for instance let's say VS Code and create a new file. To do this, open your msys2 terminal,
+and go to the folder location, in which you want to start. **Use 'cd' command to do this** for eg. cd 'any\_folder'
+</code></pre>
+
+<div>
+    Then, create the files you want to work on, use **skm new c++,** this will create the files in desired folder.
+</div>
+
+<h4>
+    <br>
+    Step 2: Draw shapes to the screen
+</h4>
+<pre><code class="language-cpp">
+# Next, let's draw some shapes to the screen. In the `program.cpp` file, add the following code to the `Draw` event:
+open_window("Shapes by Om", 800, 600);
+
+fill_rectangle(COLOR_RED,100,400,200,300);
+fill_circle(COLOR_YELLOW, 400, 300, 75);
+</code></pre>
+
+<div>
+    This will first open a window of length 800 and width 600.
+    Then, This will draw a red rectangle to the screen at location (100,400) of length 200 and width 300 and a yellow
+    circle
+    of radius 75 with a center at (400,300).
+</div>
+
+<div>
+    <h4>
+        <br>
+        Step 3: Respond to user input
+        Finally, let's make our game respond to user input. In the program.cpp file, add the following code:
+    </h4>
+</div>
+
+<pre><code class="language-cpp">
+#include "splashkit.h"
+using namespace std;
+
+    int main()
+{
+    double x = 400;
+    double y = 300;
+    open_window("Shapes by Om", 800, 600);
+
+    do{
+        process_events();
+        if (key_down(RIGHT_KEY))
+        {
+            x = x + 0.5;
+        }
+        clear_screen();
+       fill_circle(COLOR_YELLOW, x, y, 75);
+       fill_rectangle(COLOR_RED, 100, 400, 200, 300);
+       refresh_screen();
+    }
+ while (not quit_requested());
+ 
+    return 0;
+}
+</code></pre>
+
+<div>
+    This code will move the circle to the right when the right arrow key is pressed. We have used do-while loop, which
+    continues to perform actions until we close the window.
+    <br>
+    In the loop, there is a procedure called process_events(), which helps in using most of the splashkit functions.
+    Then an if statement is used, which increases the x component(center) of the circle, and then clear_screen()
+    function is used so that it can be updated every time. And at last refresh_screen() function which refreshes our
+    screen and we can change fps using this.
+</div>
+
+<div>
+    <br>
+    <h4>
+        Step 4: Test your Circle by moving it around
+    </h4>
+    Now that you've added some basic gameplay mechanics, you can test your game by first compiling by using skm clang++
+    program.cpp . Try using the left arrow key to move the circle and see what happens! Now, you can expand this code
+    for example, move it right, up, down and restrict this circle to move out of the window, etc
+</div>
 
 {% endblock content %}

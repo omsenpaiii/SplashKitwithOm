@@ -50,7 +50,7 @@ def fb():
 def ta():
     return render_template('week0.html')
 
-# routes of weeks for Task Assistant
+# Routes of weeks for Task Assistant
 
 @app.route("/taskAssistant/week1")
 def week1():
@@ -96,16 +96,16 @@ def week10():
 def week11():
     return render_template('week11.html')
 
-# Creating Post Requests
-@app.route("/show") # /show is used to show the todo's
+# # Creating Post Requests
+# @app.route("/show") # /show is used to show the todo's
 # def products():
 #     allTodo = Todo.query.all() # Printing Todo's
 #     print(allTodo)
 #     return "<p>This is products page.</p>"
 
-@app.route("/videos")
-def products():
-    return redirect("/static/best_animation.mp4")
+# @app.route("/videos")
+# def products():
+#     return redirect("/static/best_animation.mp4")
 
 @app.route('/update/<int:sno>', methods=['GET', 'POST']) # /update is used to edit the todo's
 def update(sno):
@@ -122,15 +122,12 @@ def update(sno):
     todo = Todo.query.filter_by(sno=sno).first()  # Editing To-do
     return render_template('update.html', todo=todo) 
     
-
 @app.route("/delete/<int:sno>") # /delete is used to complete the todo's and will do so by take S. no.
 def delete(sno): #and then deleting it.
     todo = Todo.query.filter_by(sno=sno).first() # Completing Todo's, .first() selecting first record for deleting
     db.session.delete(todo)
     db.session.commit()
     return redirect("/")
-
-
 
 # Running our Web App
 if __name__ == "__main__":

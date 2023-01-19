@@ -1,13 +1,55 @@
 {% extends 'taskAssistant.html' %}
 
+{% block button %}
+
+<button class="btn btn-primary" style="position:absolute;right:20px;"><a style="color:white;text-decoration:none;" href="https://docs.google.com/presentation/d/1VdpJXRiryUTLBFkZeC5uCm7U7CGP35r_ZmZCaLt1u-w/edit?usp=sharing" target="_blank">View Resources</a></button>
+
+{% endblock button %}
+
 {% block heading %}
-
-week3 heading
-
+Week 3
 {% endblock heading %}
 
 {% block content %}
+<h4>
+    <br>
+    TASK 3 OF WEEK 2:
+</h4>
+<div>
+    The basic goal for this task is to create a custom header program.
+    <br>
+    To create a custom header program in C++, you should have a solid understanding of the C++ programming language,
+    including data types, control structures, and functions. You should also be familiar with the concept of header
+    files and how they are used to organize and reuse code. Additionally, it would be helpful to have experience with
+    file input/output and string manipulation.
+</div>
 
-week3
+<h4>
+    <br>
+    TASK 1 AND 2 OF WEEK 3:
+</h4>
+<div>
+    The basic goal for this task is to extend the program done in Hellouser1.
+    <br>
+    You must have an understanding of functions as you are required to make your own functions in this task.
+    For this task, you must have an understanding of creating functions like read_string, read_integer and most
+    importantly read_double as it is the required need for this task.
+    For eg, you can do the required changes in the following read_integer code to convert it into read_double.
+</div>
 
+<pre><code class="language-cpp">
+    double read_integer(string prompt)
+    {
+        string line;
+        line = read_string(prompt);
+        return convert_to_integer(line);
+    }
+</code></pre>
+<br>
+<div>
+    You must have knowledge of data types and declaring variables.
+    <br>
+    Also, don't forget to learn about hand executions for the program flow.
+</div>
+    
 {% endblock content %}
